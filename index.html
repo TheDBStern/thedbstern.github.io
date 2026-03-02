@@ -337,7 +337,7 @@
     .research-card-visual svg {
       width: 80%;
       height: 80%;
-      opacity: 0.6;
+      opacity: 1;
     }
 
     .research-card-number {
@@ -572,7 +572,7 @@
           <div class="hero-role reveal">Bioinformatics Principal Investigator</div>
           <h1 class="reveal reveal-delay-1">David B. <span class="accent">Stern</span></h1>
           <p class="hero-subtitle reveal reveal-delay-2">
-            Computational evolutionary biologist investigating the genetic mechanisms that drive parallel and convergent evolution, using comparative and population genomic tools to understand how organisms repeatedly adapt to similar environments.
+            Evolutionary genetics | Bioinformatics | Ecological Genomics
           </p>
           <div class="hero-links reveal reveal-delay-3">
             <a href="https://scholar.google.com/citations?user=7biIW_sAAAAJ&hl=en" target="_blank" rel="noopener">
@@ -605,7 +605,7 @@
         <div class="section-divider"></div>
       </div>
       <p class="research-intro reveal">
-        Convergent and parallel evolution is among the strongest evidence for the power of natural selection, yet the mechanisms that promote repeated evolution remain poorly understood. My research aims to uncover these mechanisms to enable effective prediction of evolution in changing environments and ongoing disease outbreaks.
+        Convergent and parallel evolution is among the strongest evidence for the power of natural selection, yet the mechanisms that promote repeated evolution remain poorly understood. My research integrates evolutionary genetics, population genomics, and bioinformatics to understand how organisms adapt to novel environments. Using evolve-and-resequence experiments, comparative genomics, and computational approaches, I investigate the genomic basis of parallel adaptation in both macro- and microorganisms. This includes studying how balancing selection and epistasis promote parallel genomic responses, how cave-adapted organisms repeatedly lose complex traits like vision, how horizontal gene transfer shapes toxin diversity in harmful cyanobacteria, and developing bioinformatic tools for microbial forensics and phylogenomic analysis. My goal is to uncover generalizable mechanisms of adaptation to enable effective prediction of evolution in changing environments and ongoing disease outbreaks.
       </p>
 
       <div class="research-grid">
@@ -618,9 +618,6 @@
           </div>
           <div class="research-card-content">
             <h3>Mechanisms of Parallel Adaptation</h3>
-            <p>
-              Investigating how populations repeatedly evolve similar adaptations at the genomic level. Using evolve-and-resequence experiments with the copepod <em>Eurytemora affinis</em>, we study how balancing selection, synergistic epistasis, and shared standing genetic variation promote remarkably parallel genomic responses to environmental change.
-            </p>
             <div class="publications-list">
               <h4>Selected Publications</h4>
               <div class="pub-item">
@@ -645,41 +642,38 @@
             <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="mg1" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#cc6600" stop-opacity="0.15"/>
-                  <stop offset="100%" stop-color="#cc6600" stop-opacity="0.03"/>
+                  <stop offset="0%" stop-color="#fdf0e2"/>
+                  <stop offset="100%" stop-color="#f5e0c8"/>
                 </linearGradient>
               </defs>
               <rect fill="url(#mg1)" width="400" height="300"/>
               <!-- Abstract microbe shapes -->
-              <circle cx="120" cy="100" r="45" fill="none" stroke="#cc6600" stroke-width="1.5" opacity="0.3"/>
-              <circle cx="120" cy="100" r="30" fill="none" stroke="#cc6600" stroke-width="1" opacity="0.2"/>
-              <circle cx="280" cy="180" r="55" fill="none" stroke="#cc6600" stroke-width="1.5" opacity="0.25"/>
-              <circle cx="280" cy="180" r="38" fill="none" stroke="#cc6600" stroke-width="1" opacity="0.15"/>
-              <circle cx="200" cy="220" r="35" fill="none" stroke="#cc6600" stroke-width="1.5" opacity="0.2"/>
+              <circle cx="120" cy="100" r="45" fill="#f9e4c8" stroke="#cc6600" stroke-width="2.5"/>
+              <circle cx="120" cy="100" r="30" fill="#fdf0e2" stroke="#cc6600" stroke-width="1.5"/>
+              <circle cx="280" cy="180" r="55" fill="#f9e4c8" stroke="#cc6600" stroke-width="2.5"/>
+              <circle cx="280" cy="180" r="38" fill="#fdf0e2" stroke="#cc6600" stroke-width="1.5"/>
+              <circle cx="200" cy="220" r="35" fill="#f9e4c8" stroke="#cc6600" stroke-width="2.5"/>
               <!-- Connection lines suggesting HGT -->
-              <line x1="155" y1="120" x2="245" y2="170" stroke="#cc6600" stroke-width="1" opacity="0.15" stroke-dasharray="4 4"/>
-              <line x1="235" y1="195" x2="225" y2="210" stroke="#cc6600" stroke-width="1" opacity="0.15" stroke-dasharray="4 4"/>
-              <line x1="145" y1="130" x2="180" y2="200" stroke="#cc6600" stroke-width="1" opacity="0.12" stroke-dasharray="4 4"/>
+              <line x1="155" y1="120" x2="245" y2="170" stroke="#cc6600" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <line x1="235" y1="195" x2="225" y2="210" stroke="#cc6600" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <line x1="145" y1="130" x2="180" y2="200" stroke="#cc6600" stroke-width="1.5" stroke-dasharray="4 4"/>
               <!-- Small dots representing genes -->
-              <circle cx="105" cy="85" r="3" fill="#cc6600" opacity="0.3"/>
-              <circle cx="140" cy="110" r="3" fill="#cc6600" opacity="0.3"/>
-              <circle cx="265" cy="165" r="3" fill="#cc6600" opacity="0.3"/>
-              <circle cx="295" cy="195" r="3" fill="#cc6600" opacity="0.3"/>
-              <circle cx="190" cy="230" r="3" fill="#cc6600" opacity="0.3"/>
-              <circle cx="215" cy="210" r="3" fill="#cc6600" opacity="0.3"/>
+              <circle cx="105" cy="85" r="5" fill="#cc6600"/>
+              <circle cx="140" cy="110" r="5" fill="#cc6600"/>
+              <circle cx="265" cy="165" r="5" fill="#cc6600"/>
+              <circle cx="295" cy="195" r="5" fill="#cc6600"/>
+              <circle cx="190" cy="230" r="5" fill="#cc6600"/>
+              <circle cx="215" cy="210" r="5" fill="#cc6600"/>
               <!-- DNA-like helix hint -->
-              <path d="M50 50 Q70 65 50 80 Q30 95 50 110 Q70 125 50 140" fill="none" stroke="#cc6600" stroke-width="1.2" opacity="0.2"/>
-              <path d="M60 50 Q40 65 60 80 Q80 95 60 110 Q40 125 60 140" fill="none" stroke="#cc6600" stroke-width="1.2" opacity="0.2"/>
-              <path d="M340 140 Q360 155 340 170 Q320 185 340 200 Q360 215 340 230" fill="none" stroke="#cc6600" stroke-width="1.2" opacity="0.2"/>
-              <path d="M350 140 Q330 155 350 170 Q370 185 350 200 Q330 215 350 230" fill="none" stroke="#cc6600" stroke-width="1.2" opacity="0.2"/>
+              <path d="M50 50 Q70 65 50 80 Q30 95 50 110 Q70 125 50 140" fill="none" stroke="#cc6600" stroke-width="2.5"/>
+              <path d="M60 50 Q40 65 60 80 Q80 95 60 110 Q40 125 60 140" fill="none" stroke="#b35900" stroke-width="2.5"/>
+              <path d="M340 140 Q360 155 340 170 Q320 185 340 200 Q360 215 340 230" fill="none" stroke="#cc6600" stroke-width="2.5"/>
+              <path d="M350 140 Q330 155 350 170 Q370 185 350 200 Q330 215 350 230" fill="none" stroke="#b35900" stroke-width="2.5"/>
             </svg>
             <div class="research-card-number">02</div>
           </div>
           <div class="research-card-content">
             <h3>Microbial Genomics</h3>
-            <p>
-              Applying comparative and population genomic approaches to study the evolution and diversity of microbial organisms. Current work explores horizontal gene transfer underlying toxin biosynthesis in harmful algal bloom-causing cyanobacteria and the genomic characterization of pathogenic <em>Vibrio</em> species for microbial forensics applications.
-            </p>
             <div class="publications-list">
               <h4>Selected Publications</h4>
               <div class="pub-item">
@@ -703,42 +697,48 @@
           <div class="research-card-visual">
             <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="eg1" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#cc6600" stop-opacity="0.12"/>
-                  <stop offset="100%" stop-color="#cc6600" stop-opacity="0.03"/>
+                <linearGradient id="eg1" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#e8ddd0"/>
+                  <stop offset="100%" stop-color="#c9b99a"/>
+                </linearGradient>
+                <linearGradient id="eg2" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#5c4a32"/>
+                  <stop offset="100%" stop-color="#3a2d1a"/>
                 </linearGradient>
               </defs>
               <rect fill="url(#eg1)" width="400" height="300"/>
               <!-- Cave entrance shape -->
-              <path d="M0 300 L0 120 Q50 80 100 100 Q130 60 170 90 Q200 40 240 80 Q270 55 310 85 Q340 70 380 100 L400 90 L400 300 Z" fill="#cc6600" opacity="0.06"/>
-              <path d="M140 300 Q160 200 180 180 Q200 160 200 140 Q200 120 210 110 Q230 90 240 110 Q250 130 240 160 Q230 180 250 200 Q270 230 260 300 Z" fill="#cc6600" opacity="0.08"/>
+              <path d="M0 300 L0 120 Q50 80 100 100 Q130 60 170 90 Q200 40 240 80 Q270 55 310 85 Q340 70 380 100 L400 90 L400 300 Z" fill="#7a6548"/>
+              <path d="M140 300 Q160 200 180 180 Q200 160 200 140 Q200 120 210 110 Q230 90 240 110 Q250 130 240 160 Q230 180 250 200 Q270 230 260 300 Z" fill="url(#eg2)"/>
               <!-- Crayfish-like abstract forms -->
-              <ellipse cx="120" cy="240" rx="20" ry="8" fill="none" stroke="#cc6600" stroke-width="1.5" opacity="0.3"/>
-              <line x1="100" y1="238" x2="85" y2="230" stroke="#cc6600" stroke-width="1" opacity="0.25"/>
-              <line x1="100" y1="242" x2="85" y2="248" stroke="#cc6600" stroke-width="1" opacity="0.25"/>
-              <ellipse cx="300" cy="250" rx="18" ry="7" fill="none" stroke="#cc6600" stroke-width="1.5" opacity="0.25"/>
-              <line x1="282" y1="248" x2="270" y2="242" stroke="#cc6600" stroke-width="1" opacity="0.2"/>
-              <line x1="282" y1="252" x2="270" y2="258" stroke="#cc6600" stroke-width="1" opacity="0.2"/>
+              <ellipse cx="120" cy="240" rx="20" ry="8" fill="#cc6600" stroke="#b35900" stroke-width="2"/>
+              <line x1="100" y1="238" x2="85" y2="230" stroke="#b35900" stroke-width="2"/>
+              <line x1="100" y1="242" x2="85" y2="248" stroke="#b35900" stroke-width="2"/>
+              <ellipse cx="300" cy="250" rx="18" ry="7" fill="#cc6600" stroke="#b35900" stroke-width="2"/>
+              <line x1="282" y1="248" x2="270" y2="242" stroke="#b35900" stroke-width="2"/>
+              <line x1="282" y1="252" x2="270" y2="258" stroke="#b35900" stroke-width="2"/>
               <!-- Eye symbols: open vs closed -->
-              <circle cx="80" cy="180" r="10" fill="none" stroke="#cc6600" stroke-width="1.5" opacity="0.35"/>
-              <circle cx="80" cy="180" r="4" fill="#cc6600" opacity="0.25"/>
-              <circle cx="320" cy="190" r="10" fill="none" stroke="#cc6600" stroke-width="1.5" opacity="0.2"/>
-              <line x1="310" y1="190" x2="330" y2="190" stroke="#cc6600" stroke-width="1.5" opacity="0.2"/>
+              <circle cx="80" cy="180" r="10" fill="#faf9f7" stroke="#cc6600" stroke-width="2.5"/>
+              <circle cx="80" cy="180" r="4" fill="#1c1917"/>
+              <circle cx="320" cy="190" r="10" fill="#d4c9b8" stroke="#8a7560" stroke-width="2.5"/>
+              <line x1="310" y1="190" x2="330" y2="190" stroke="#8a7560" stroke-width="2.5"/>
               <!-- Branching phylogeny -->
-              <path d="M180 280 L180 260 L160 240" fill="none" stroke="#cc6600" stroke-width="1.2" opacity="0.2"/>
-              <path d="M180 260 L200 240" fill="none" stroke="#cc6600" stroke-width="1.2" opacity="0.2"/>
-              <path d="M160 240 L150 225" fill="none" stroke="#cc6600" stroke-width="1" opacity="0.15"/>
-              <path d="M160 240 L170 225" fill="none" stroke="#cc6600" stroke-width="1" opacity="0.15"/>
-              <path d="M200 240 L190 225" fill="none" stroke="#cc6600" stroke-width="1" opacity="0.15"/>
-              <path d="M200 240 L210 225" fill="none" stroke="#cc6600" stroke-width="1" opacity="0.15"/>
+              <path d="M180 280 L180 260 L160 240" fill="none" stroke="#cc6600" stroke-width="2.5"/>
+              <path d="M180 260 L200 240" fill="none" stroke="#cc6600" stroke-width="2.5"/>
+              <path d="M160 240 L150 225" fill="none" stroke="#cc6600" stroke-width="2"/>
+              <path d="M160 240 L170 225" fill="none" stroke="#cc6600" stroke-width="2"/>
+              <path d="M200 240 L190 225" fill="none" stroke="#cc6600" stroke-width="2"/>
+              <path d="M200 240 L210 225" fill="none" stroke="#cc6600" stroke-width="2"/>
+              <!-- Phylogeny tip dots -->
+              <circle cx="150" cy="225" r="4" fill="#cc6600"/>
+              <circle cx="170" cy="225" r="4" fill="#cc6600"/>
+              <circle cx="190" cy="225" r="4" fill="#cc6600"/>
+              <circle cx="210" cy="225" r="4" fill="#cc6600"/>
             </svg>
             <div class="research-card-number">03</div>
           </div>
           <div class="research-card-content">
             <h3>Ecological Genomics</h3>
-            <p>
-              Studying how organisms adapt to novel ecological environments at the genomic level. Key work examines convergent vision loss across independently cave-adapted crayfish lineages, revealing that relaxed stabilizing selection on gene expression&mdash;rather than changes at the same loci&mdash;drives parallel trait loss through shared evolutionary processes.
-            </p>
             <div class="publications-list">
               <h4>Selected Publications</h4>
               <div class="pub-item">
@@ -763,40 +763,37 @@
             <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="br1" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#cc6600" stop-opacity="0.08"/>
-                  <stop offset="100%" stop-color="#cc6600" stop-opacity="0.15"/>
+                  <stop offset="0%" stop-color="#f0ebe4"/>
+                  <stop offset="100%" stop-color="#e5ddd2"/>
                 </linearGradient>
               </defs>
               <rect fill="url(#br1)" width="400" height="300"/>
               <!-- Terminal/code block -->
-              <rect x="60" y="50" width="280" height="200" rx="6" fill="none" stroke="#cc6600" stroke-width="1.5" opacity="0.25"/>
-              <rect x="60" y="50" width="280" height="28" rx="6" fill="#cc6600" opacity="0.06"/>
-              <circle cx="78" cy="64" r="4" fill="#cc6600" opacity="0.2"/>
-              <circle cx="92" cy="64" r="4" fill="#cc6600" opacity="0.15"/>
-              <circle cx="106" cy="64" r="4" fill="#cc6600" opacity="0.1"/>
+              <rect x="60" y="50" width="280" height="200" rx="6" fill="#faf9f7" stroke="#cc6600" stroke-width="2.5"/>
+              <rect x="60" y="50" width="280" height="28" rx="6" fill="#cc6600"/>
+              <circle cx="78" cy="64" r="4" fill="#ff9933"/>
+              <circle cx="92" cy="64" r="4" fill="#ffb366"/>
+              <circle cx="106" cy="64" r="4" fill="#ffd699"/>
               <!-- Code lines -->
-              <rect x="80" y="95" width="100" height="3" rx="1.5" fill="#cc6600" opacity="0.15"/>
-              <rect x="80" y="110" width="160" height="3" rx="1.5" fill="#cc6600" opacity="0.12"/>
-              <rect x="80" y="125" width="80" height="3" rx="1.5" fill="#cc6600" opacity="0.1"/>
-              <rect x="80" y="140" width="200" height="3" rx="1.5" fill="#cc6600" opacity="0.15"/>
-              <rect x="80" y="155" width="140" height="3" rx="1.5" fill="#cc6600" opacity="0.1"/>
-              <rect x="80" y="170" width="120" height="3" rx="1.5" fill="#cc6600" opacity="0.12"/>
-              <rect x="80" y="185" width="180" height="3" rx="1.5" fill="#cc6600" opacity="0.08"/>
-              <rect x="80" y="200" width="90" height="3" rx="1.5" fill="#cc6600" opacity="0.15"/>
-              <rect x="80" y="215" width="150" height="3" rx="1.5" fill="#cc6600" opacity="0.1"/>
+              <rect x="80" y="95" width="100" height="4" rx="2" fill="#cc6600"/>
+              <rect x="80" y="110" width="160" height="4" rx="2" fill="#b35900"/>
+              <rect x="80" y="125" width="80" height="4" rx="2" fill="#d98c4f"/>
+              <rect x="80" y="140" width="200" height="4" rx="2" fill="#cc6600"/>
+              <rect x="80" y="155" width="140" height="4" rx="2" fill="#d98c4f"/>
+              <rect x="80" y="170" width="120" height="4" rx="2" fill="#b35900"/>
+              <rect x="80" y="185" width="180" height="4" rx="2" fill="#cc6600"/>
+              <rect x="80" y="200" width="90" height="4" rx="2" fill="#d98c4f"/>
+              <rect x="80" y="215" width="150" height="4" rx="2" fill="#b35900"/>
               <!-- Pipeline arrows -->
-              <path d="M355 100 L375 100 L375 200 L355 200" fill="none" stroke="#cc6600" stroke-width="1.2" opacity="0.2"/>
-              <polygon points="355,195 365,200 355,205" fill="#cc6600" opacity="0.2"/>
-              <path d="M45 100 L25 100 L25 200 L45 200" fill="none" stroke="#cc6600" stroke-width="1.2" opacity="0.2"/>
-              <polygon points="45,195 35,200 45,205" fill="#cc6600" opacity="0.2"/>
+              <path d="M355 100 L375 100 L375 200 L355 200" fill="none" stroke="#cc6600" stroke-width="2.5"/>
+              <polygon points="352,195 365,200 352,205" fill="#cc6600"/>
+              <path d="M45 100 L25 100 L25 200 L45 200" fill="none" stroke="#cc6600" stroke-width="2.5"/>
+              <polygon points="48,195 35,200 48,205" fill="#cc6600"/>
             </svg>
             <div class="research-card-number">04</div>
           </div>
           <div class="research-card-content">
             <h3>Bioinformatics Resources</h3>
-            <p>
-              Developing computational tools and frameworks for genomic analysis. This includes phylogenetic simulation frameworks for benchmarking comparative transcriptomic methods, phylogenomic resource databases, and bioinformatic pipelines for microbial forensics and molecular surveillance applications.
-            </p>
             <div class="publications-list">
               <h4>Selected Publications</h4>
               <div class="pub-item">
@@ -885,7 +882,7 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-left">
-        &copy; 2025 David B. Stern
+        &copy; 2026 David B. Stern
       </div>
       <div class="footer-right">
         <a href="#top">Back to top</a>
