@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>David B. Stern — Research</title>
+  <meta name="description" content="David B. Stern, Bioinformatics Principal Investigator. Research in evolutionary genomics, parallel adaptation, microbial genomics, and bioinformatics.">
+  <meta property="og:title" content="David B. Stern — Research">
+  <meta property="og:description" content="Bioinformatics Principal Investigator at NBACC. Research in evolutionary genomics, parallel adaptation, and microbial forensics.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.png" type="image/png">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NK7LN9PL9X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NK7LN9PL9X');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-ink: #1c1917;
+      --color-ink-light: #57534e;
+      --color-ink-faint: #a8a29e;
+      --color-surface: #faf9f7;
+      --color-surface-warm: #f5f0ea;
+      --color-surface-dim: #ece5db;
+      --color-accent: #cc6600;
+      --color-accent-soft: rgba(204, 102, 0, 0.08);
+      --color-accent-hover: #b35900;
+      --color-border: #e7e0d8;
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max-width: 1120px;
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 3rem;
+      --space-xl: 5rem;
+      --space-2xl: 8rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-ink);
+      background: var(--color-surface);
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* --- Grain Overlay --- */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    /* --- Navigation --- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(250, 249, 247, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      transition: box-shadow 0.3s ease;
+    }
+
+    nav.scrolled {
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--color-ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--space-md);
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-ink-light);
+      text-decoration: none;
+      transition: color 0.2s;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links a:hover { color: var(--color-accent); }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--color-ink);
+      margin: 4px 0;
+      transition: all 0.3s;
+    }
+
+    /* --- Sections --- */
+    section { padding: var(--space-xl) var(--space-md); }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* --- Hero --- */
+    .hero {
+      padding-top: calc(60px + var(--space-2xl));
+      padding-bottom: var(--space-xl);
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .hero-text h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-sm);
+    }
+
+    .hero-text h1 .accent {
+      color: var(--color-accent);
+    }
+
+    .hero-subtitle {
+      font-size: 1.125rem;
+      color: var(--color-ink-light);
+      margin-bottom: var(--space-md);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .hero-role {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-md);
+    }
+
+    .hero-role::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--color-accent);
+    }
+
+    .hero-photo {
+      position: relative;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(15%);
+    }
+
+    .hero-photo::after {
+      content: '';
+      position: absolute;
+      inset: 8px -8px -8px 8px;
+      border: 2px solid var(--color-accent);
+      z-index: -1;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+    }
+
+    .hero-links a {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--color-ink-light);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--color-border);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-links a:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    .hero-links a svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* --- Section Headers --- */
+    .section-header {
+      margin-bottom: var(--space-lg);
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-xs);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .section-divider {
+      width: 48px;
+      height: 2px;
+      background: var(--color-accent);
+      margin-top: var(--space-sm);
+    }
+
+    /* --- Research Areas --- */
+    .research {
+      background: var(--color-surface-warm);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .research-intro {
+      max-width: 680px;
+      color: var(--color-ink-light);
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      margin-bottom: var(--space-xl);
+    }
+
+    .research-grid {
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    .research-card {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: var(--space-lg);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: var(--space-lg);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .research-card:hover {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+    }
+
+    .research-card-visual {
+      position: relative;
+      overflow: hidden;
+      background: var(--color-surface-dim);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .research-card-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .research-card-visual svg {
+      width: 80%;
+      height: 80%;
+      opacity: 1;
+    }
+
+    .research-card-number {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      color: var(--color-accent);
+      opacity: 0.15;
+      line-height: 1;
+      position: absolute;
+      top: 12px;
+      left: 16px;
+    }
+
+    .research-card-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: var(--space-sm);
+      line-height: 1.3;
+    }
+
+    .research-card-content p {
+      color: var(--color-ink-light);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      margin-bottom: var(--space-md);
+    }
+
+    .publications-list {
+      border-top: 1px solid var(--color-border);
+      padding-top: var(--space-sm);
+    }
+
+    .publications-list h4 {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .pub-item {
+      font-size: 0.8125rem;
+      color: var(--color-ink-light);
+      line-height: 1.6;
+      margin-bottom: 0.625rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .pub-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      opacity: 0.5;
+    }
+
+    .pub-item a {
+      color: var(--color-ink);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .pub-item a:hover {
+      color: var(--color-accent);
+    }
+
+    .pub-item .pub-meta {
+      color: var(--color-ink-faint);
+    }
+
+    /* --- About --- */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+    }
+
+    .about-content p {
+      color: var(--color-ink-light);
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      margin-bottom: var(--space-sm);
+    }
+
+    .about-content a {
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .about-content a:hover {
+      border-bottom-color: var(--color-accent);
+    }
+
+    /* --- Footer --- */
+    footer {
+      border-top: 1px solid var(--color-border);
+      padding: var(--space-lg) var(--space-md);
+      background: var(--color-surface-warm);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left {
+      font-size: 0.8125rem;
+      color: var(--color-ink-faint);
+    }
+
+    .footer-right {
+      display: flex;
+      gap: var(--space-md);
+    }
+
+    .footer-right a {
+      color: var(--color-ink-faint);
+      text-decoration: none;
+      font-size: 0.8125rem;
+      transition: color 0.2s;
+    }
+
+    .footer-right a:hover { color: var(--color-accent); }
+
+    /* --- Animations --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* --- Responsive --- */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+
+      .hero-photo {
+        max-width: 240px;
+        order: -1;
+      }
+
+      .research-card {
+        grid-template-columns: 1fr;
+      }
+
+      .research-card-visual {
+        max-height: 220px;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      section { padding: var(--space-lg) var(--space-sm); }
+
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(250, 249, 247, 0.98);
+        backdrop-filter: blur(12px);
+        padding: var(--space-sm) var(--space-md);
+        border-bottom: 1px solid var(--color-border);
+      }
+      .nav-toggle { display: block; }
+
+      .hero { padding-top: calc(60px + var(--space-lg)); }
+
+      .research-card { padding: var(--space-md); }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: var(--space-sm);
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">D. B. Stern</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#research">Research</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="https://scholar.google.com/citations?user=7biIW_sAAAAJ&hl=en" target="_blank" rel="noopener">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="hero-role reveal">Bioinformatics Principal Investigator</div>
+          <h1 class="reveal reveal-delay-1">David B. <span class="accent">Stern</span></h1>
+          <p class="hero-subtitle reveal reveal-delay-2">
+            Evolutionary genetics | Bioinformatics | Ecological Genomics
+          </p>
+          <div class="hero-links reveal reveal-delay-3">
+            <a href="https://scholar.google.com/citations?user=7biIW_sAAAAJ&hl=en" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+              Google Scholar
+            </a>
+            <a href="https://github.com/TheDBStern" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/david-b-stern/" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+        <div class="hero-photo reveal reveal-delay-2">
+          <img src="images/bio-photo.jpg" alt="David B. Stern" width="280" height="373">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Areas -->
+  <section class="research" id="research">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Research</div>
+        <h2 class="section-title">Areas of Investigation</h2>
+        <div class="section-divider"></div>
+      </div>
+      <p class="research-intro reveal">
+        Convergent and parallel evolution is among the strongest evidence for the power of natural selection, yet the mechanisms that promote repeated evolution remain poorly understood. My research integrates evolutionary genetics, population genomics, and bioinformatics to understand how organisms adapt to novel environments. Using evolve-and-resequence experiments, comparative genomics, and computational approaches, I investigate the genomic basis of parallel adaptation in both macro- and microorganisms. This includes studying how balancing selection and epistasis promote parallel genomic responses, how cave-adapted organisms repeatedly lose complex traits like vision, how horizontal gene transfer shapes toxin diversity in harmful cyanobacteria, and developing bioinformatic tools for microbial forensics and phylogenomic analysis. My goal is to uncover generalizable mechanisms of adaptation to enable effective prediction of evolution in changing environments and ongoing disease outbreaks.
+      </p>
+
+      <div class="research-grid">
+
+        <!-- Card 1: Parallel Adaptation -->
+        <div class="research-card reveal">
+          <div class="research-card-visual">
+            <img src="images/draft_manhattan_plot.jpg" alt="Manhattan plot showing genome-wide parallel selection signals in copepods">
+            <div class="research-card-number">01</div>
+          </div>
+          <div class="research-card-content">
+            <h3>Mechanisms of Parallel Adaptation</h3>
+            <div class="publications-list">
+              <h4>Selected Publications</h4>
+              <div class="pub-item">
+                <a href="https://www.nature.com/articles/s41467-022-31622-8" target="_blank" rel="noopener">Genome-wide signatures of synergistic epistasis during parallel adaptation in a Baltic Sea copepod.</a>
+                <span class="pub-meta"> Stern DB, Anderson NW, Diaz JA, Lee CE. <em>Nature Communications</em>, 2022.</span>
+              </div>
+              <div class="pub-item">
+                <a href="https://www.nature.com/articles/s41559-020-1201-y" target="_blank" rel="noopener">Evolutionary origins of genomic adaptations in an invasive copepod.</a>
+                <span class="pub-meta"> Stern DB, Lee CE. <em>Nature Ecology &amp; Evolution</em>, 2020.</span>
+              </div>
+              <div class="pub-item">
+                <a href="https://doi.org/10.1093/molbev/msy106" target="_blank" rel="noopener">The evolution of gene expression underlying vision loss in cave animals.</a>
+                <span class="pub-meta"> Stern DB, Crancdall KA. <em>Molecular Biology &amp; Evolution</em>, 2018.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Microbial Genomics -->
+        <div class="research-card reveal">
+          <div class="research-card-visual">
+            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="mg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fdf0e2"/>
+                  <stop offset="100%" stop-color="#f5e0c8"/>
+                </linearGradient>
+              </defs>
+              <rect fill="url(#mg1)" width="400" height="300"/>
+              <!-- Abstract microbe shapes -->
+              <circle cx="120" cy="100" r="45" fill="#f9e4c8" stroke="#cc6600" stroke-width="2.5"/>
+              <circle cx="120" cy="100" r="30" fill="#fdf0e2" stroke="#cc6600" stroke-width="1.5"/>
+              <circle cx="280" cy="180" r="55" fill="#f9e4c8" stroke="#cc6600" stroke-width="2.5"/>
+              <circle cx="280" cy="180" r="38" fill="#fdf0e2" stroke="#cc6600" stroke-width="1.5"/>
+              <circle cx="200" cy="220" r="35" fill="#f9e4c8" stroke="#cc6600" stroke-width="2.5"/>
+              <!-- Connection lines suggesting HGT -->
+              <line x1="155" y1="120" x2="245" y2="170" stroke="#cc6600" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <line x1="235" y1="195" x2="225" y2="210" stroke="#cc6600" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <line x1="145" y1="130" x2="180" y2="200" stroke="#cc6600" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <!-- Small dots representing genes -->
+              <circle cx="105" cy="85" r="5" fill="#cc6600"/>
+              <circle cx="140" cy="110" r="5" fill="#cc6600"/>
+              <circle cx="265" cy="165" r="5" fill="#cc6600"/>
+              <circle cx="295" cy="195" r="5" fill="#cc6600"/>
+              <circle cx="190" cy="230" r="5" fill="#cc6600"/>
+              <circle cx="215" cy="210" r="5" fill="#cc6600"/>
+              <!-- DNA-like helix hint -->
+              <path d="M50 50 Q70 65 50 80 Q30 95 50 110 Q70 125 50 140" fill="none" stroke="#cc6600" stroke-width="2.5"/>
+              <path d="M60 50 Q40 65 60 80 Q80 95 60 110 Q40 125 60 140" fill="none" stroke="#b35900" stroke-width="2.5"/>
+              <path d="M340 140 Q360 155 340 170 Q320 185 340 200 Q360 215 340 230" fill="none" stroke="#cc6600" stroke-width="2.5"/>
+              <path d="M350 140 Q330 155 350 170 Q370 185 350 200 Q330 215 350 230" fill="none" stroke="#b35900" stroke-width="2.5"/>
+            </svg>
+            <div class="research-card-number">02</div>
+          </div>
+          <div class="research-card-content">
+            <h3>Microbial Genomics</h3>
+            <div class="publications-list">
+              <h4>Selected Publications</h4>
+              <div class="pub-item">
+                <a href="https://doi.org/10.1093/gbe/evae248" target="_blank" rel="noopener">Novel toxin biosynthetic gene cluster in harmful algal bloom-causing <em>Heteroscytonema crispum</em>.</a>
+                <span class="pub-meta"> Stern DB, Raborn RT, Lovett SP, Boise NR, et al. <em>Genome Biology and Evolution</em>, 2025.</span>
+              </div>
+              <div class="pub-item">
+                <a href="https://journals.asm.org/doi/full/10.1128/mbio.00516-25" target="_blank" rel="noopener">Hybridization capture sequencing for <em>Vibrio</em> spp. and associated virulence factors.</a>
+                <span class="pub-meta"> Brumfield KD, Enke S, Swan BK, ..., Stern DB, et al. <em>mBio</em>, 2025.</span>
+              </div>
+              <div class="pub-item">
+                <a href="https://gut.bmj.com/content/71/11/2371.abstract" target="_blank" rel="noopener">Gut microbiota changes are detected in asymptomatic very young children with SARS-CoV-2 infection.</a>
+                <span class="pub-meta"> Nashed L, Mani J, Hazrati S, Stern DB, et al. <em>Gut</em>, 2022.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Ecological Genomics -->
+        <div class="research-card reveal">
+          <div class="research-card-visual">
+            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="eg1" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#e8ddd0"/>
+                  <stop offset="100%" stop-color="#c9b99a"/>
+                </linearGradient>
+                <linearGradient id="eg2" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#5c4a32"/>
+                  <stop offset="100%" stop-color="#3a2d1a"/>
+                </linearGradient>
+              </defs>
+              <rect fill="url(#eg1)" width="400" height="300"/>
+              <!-- Cave entrance shape -->
+              <path d="M0 300 L0 120 Q50 80 100 100 Q130 60 170 90 Q200 40 240 80 Q270 55 310 85 Q340 70 380 100 L400 90 L400 300 Z" fill="#7a6548"/>
+              <path d="M140 300 Q160 200 180 180 Q200 160 200 140 Q200 120 210 110 Q230 90 240 110 Q250 130 240 160 Q230 180 250 200 Q270 230 260 300 Z" fill="url(#eg2)"/>
+              <!-- Crayfish-like abstract forms -->
+              <ellipse cx="120" cy="240" rx="20" ry="8" fill="#cc6600" stroke="#b35900" stroke-width="2"/>
+              <line x1="100" y1="238" x2="85" y2="230" stroke="#b35900" stroke-width="2"/>
+              <line x1="100" y1="242" x2="85" y2="248" stroke="#b35900" stroke-width="2"/>
+              <ellipse cx="300" cy="250" rx="18" ry="7" fill="#cc6600" stroke="#b35900" stroke-width="2"/>
+              <line x1="282" y1="248" x2="270" y2="242" stroke="#b35900" stroke-width="2"/>
+              <line x1="282" y1="252" x2="270" y2="258" stroke="#b35900" stroke-width="2"/>
+              <!-- Eye symbols: open vs closed -->
+              <circle cx="80" cy="180" r="10" fill="#faf9f7" stroke="#cc6600" stroke-width="2.5"/>
+              <circle cx="80" cy="180" r="4" fill="#1c1917"/>
+              <circle cx="320" cy="190" r="10" fill="#d4c9b8" stroke="#8a7560" stroke-width="2.5"/>
+              <line x1="310" y1="190" x2="330" y2="190" stroke="#8a7560" stroke-width="2.5"/>
+              <!-- Branching phylogeny -->
+              <path d="M180 280 L180 260 L160 240" fill="none" stroke="#cc6600" stroke-width="2.5"/>
+              <path d="M180 260 L200 240" fill="none" stroke="#cc6600" stroke-width="2.5"/>
+              <path d="M160 240 L150 225" fill="none" stroke="#cc6600" stroke-width="2"/>
+              <path d="M160 240 L170 225" fill="none" stroke="#cc6600" stroke-width="2"/>
+              <path d="M200 240 L190 225" fill="none" stroke="#cc6600" stroke-width="2"/>
+              <path d="M200 240 L210 225" fill="none" stroke="#cc6600" stroke-width="2"/>
+              <!-- Phylogeny tip dots -->
+              <circle cx="150" cy="225" r="4" fill="#cc6600"/>
+              <circle cx="170" cy="225" r="4" fill="#cc6600"/>
+              <circle cx="190" cy="225" r="4" fill="#cc6600"/>
+              <circle cx="210" cy="225" r="4" fill="#cc6600"/>
+            </svg>
+            <div class="research-card-number">03</div>
+          </div>
+          <div class="research-card-content">
+            <h3>Ecological Genomics</h3>
+            <div class="publications-list">
+              <h4>Selected Publications</h4>
+              <div class="pub-item">
+                <a href="https://www.authorea.com/doi/full/10.22541/au.168311545.58858033" target="_blank" rel="noopener">Local adaptation despite gene flow in copepod populations across salinity and temperature gradients in the Baltic and North Seas.</a>
+                <span class="pub-meta"> Diaz JA, Stern DB, Lee CA. <em>Diversity and Distributions</em>, 2026.</span>
+              </div>
+              <div class="pub-item">
+                <a href="https://academic.oup.com/icb/article/58/3/398/4995854" target="_blank" rel="noopener">Phototransduction gene expression and evolution in cave and surface crayfishes.</a>
+                <span class="pub-meta"> Stern DB, Crandall KA. <em>Integrative and Comparative Biology</em>, 2018.</span>
+              </div>
+              <div class="pub-item">
+                <a href="https://academic.oup.com/evolut/article/71/10/2522/6881894" target="_blank" rel="noopener">Phylogenetic evidence from freshwater crayfishes that cave adaptation is not an evolutionary dead-end.</a>
+                <span class="pub-meta"> Stern DB, Breinholt J, Pedraza-Lara C, ..., Crandall KA. <em>Evolution</em>, 2017.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Bioinformatics Resources -->
+        <div class="research-card reveal">
+          <div class="research-card-visual">
+            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="br1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f0ebe4"/>
+                  <stop offset="100%" stop-color="#e5ddd2"/>
+                </linearGradient>
+              </defs>
+              <rect fill="url(#br1)" width="400" height="300"/>
+              <!-- Terminal/code block -->
+              <rect x="60" y="50" width="280" height="200" rx="6" fill="#faf9f7" stroke="#cc6600" stroke-width="2.5"/>
+              <rect x="60" y="50" width="280" height="28" rx="6" fill="#cc6600"/>
+              <circle cx="78" cy="64" r="4" fill="#ff9933"/>
+              <circle cx="92" cy="64" r="4" fill="#ffb366"/>
+              <circle cx="106" cy="64" r="4" fill="#ffd699"/>
+              <!-- Code lines -->
+              <rect x="80" y="95" width="100" height="4" rx="2" fill="#cc6600"/>
+              <rect x="80" y="110" width="160" height="4" rx="2" fill="#b35900"/>
+              <rect x="80" y="125" width="80" height="4" rx="2" fill="#d98c4f"/>
+              <rect x="80" y="140" width="200" height="4" rx="2" fill="#cc6600"/>
+              <rect x="80" y="155" width="140" height="4" rx="2" fill="#d98c4f"/>
+              <rect x="80" y="170" width="120" height="4" rx="2" fill="#b35900"/>
+              <rect x="80" y="185" width="180" height="4" rx="2" fill="#cc6600"/>
+              <rect x="80" y="200" width="90" height="4" rx="2" fill="#d98c4f"/>
+              <rect x="80" y="215" width="150" height="4" rx="2" fill="#b35900"/>
+              <!-- Pipeline arrows -->
+              <path d="M355 100 L375 100 L375 200 L355 200" fill="none" stroke="#cc6600" stroke-width="2.5"/>
+              <polygon points="352,195 365,200 352,205" fill="#cc6600"/>
+              <path d="M45 100 L25 100 L25 200 L45 200" fill="none" stroke="#cc6600" stroke-width="2.5"/>
+              <polygon points="48,195 35,200 48,205" fill="#cc6600"/>
+            </svg>
+            <div class="research-card-number">04</div>
+          </div>
+          <div class="research-card-content">
+            <h3>Bioinformatics Resources</h3>
+            <div class="publications-list">
+              <h4>Selected Publications</h4>
+              <div class="pub-item">
+                <a href="https://doi.org/10.1093/molbev/msac269" target="_blank" rel="noopener">A phylogenetic framework to simulate synthetic interspecies RNA-Seq data.</a>
+                <span class="pub-meta"> Bastide P, Soneson C, Stern DB, Lespinet O, Gallopin M. <em>Molecular Biology and Evolution</em>, 2023.</span>
+              </div>
+              <div class="pub-item">
+                <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/1755-0998.13180" target="_blank" rel="noopener">Hemiptera phylogenomic resources: tree-based orthology prediction and conserved exon identification.</a>
+                <span class="pub-meta"> Owen CL, Stern DB, Hilton SK, Crandall KA. <em>Molecular Ecology Resources</em>, 2020.</span>
+              </div>
+              <div class="pub-item">
+                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4391732/" target="_blank" rel="noopener">Concatenation and species tree methods exhibit statistically indistinguishable accuracy under a range of simulated conditions.</a>
+                <span class="pub-meta"> Tonini J, Moore A, Stern DB, Shcheglovitova M, Ortí G. <em>PLoS currents</em>, 2015.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Background</div>
+        <h2 class="section-title">About</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="about-content">
+        <div class="reveal">
+          <p>
+            I am a Bioinformatics Principal Investigator with the <strong>National Biodefense Analysis and Countermeasures Center</strong> (NBACC), where my work focuses on microbial forensics, evolutionary genomics, and bioinformatic workflow development. I am also a part-time Professorial Lecturer in the Biostatistics and Bioinformatics Department at the <a href="https://publichealth.gwu.edu/" target="_blank" rel="noopener">George Washington University Milken Institute of Public Health</a>.
+          </p>
+          <p>
+            Previously, I was a Computational Biologist with the <a href="https://www.niaid.nih.gov/research/bioinformatics-computational-biosciences-branch" target="_blank" rel="noopener">Bioinformatics and Computational Biosciences Branch</a> (BCBB) of the National Institute of Allergy and Infectious Disease, where I was also involved in teaching university courses in evolutionary genetics and bioinformatics through the NIAID African Centers of Excellence program.
+          </p>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <p>
+            Prior to that, I was an <a href="https://www.genome.gov/careers-training/NHGRI-Funding-Opportunities-Training-Career-Development/Locations" target="_blank" rel="noopener">NIH/NHGRI Genome Sciences Training Program</a> Postdoctoral Fellow and Michael Guyer Postdoctoral Fellow at the <a href="https://gstp.wisc.edu/" target="_blank" rel="noopener">University of Wisconsin-Madison</a>, working with <a href="https://carollee.labs.wisc.edu/Lee.html" target="_blank" rel="noopener">Prof. Carol Lee</a>.
+          </p>
+          <p>
+            I obtained my PhD in Biological Sciences from the George Washington University <a href="https://cbi.gwu.edu/" target="_blank" rel="noopener">Computational Biology Institute</a>, working with Prof. Keith Crandall.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="background: var(--color-surface-warm); border-top: 1px solid var(--color-border);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Connect</div>
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="hero-links reveal" style="margin-top: var(--space-md);">
+        <a href="mailto:dstern7760@gmail.com">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+        <a href="https://scholar.google.com/citations?user=7biIW_sAAAAJ&hl=en" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+          Google Scholar
+        </a>
+        <a href="https://github.com/TheDBStern" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/david-b-stern/" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://x.com/thedbstern" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+          X / Twitter
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        &copy; 2026 David B. Stern
+      </div>
+      <div class="footer-right">
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close mobile nav on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
