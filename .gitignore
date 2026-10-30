@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+
+# Claude Code
+.claude/
+CLAUDE.md
+CLAUDE.local.md
